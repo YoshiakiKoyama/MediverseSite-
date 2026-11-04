@@ -1,0 +1,330 @@
+/* =========================
+   General Styles
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #12121c;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   Navigation Bar
+========================= */
+
+.navbar {
+    background-color: #1e1e2e;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #a78bfa;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #dddddd;
+    font-size: 15px;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #a78bfa;
+}
+
+
+/* =========================
+   Main Container
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+
+/* =========================
+   Page Header
+========================= */
+
+.page-header {
+    margin-bottom: 35px;
+}
+
+.page-header h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #aaaaaa;
+    font-size: 16px;
+}
+
+
+/* =========================
+   Search Section
+========================= */
+
+.search-section {
+    margin-bottom: 40px;
+}
+
+.search-form {
+    display: flex;
+    gap: 12px;
+}
+
+.search-input {
+    flex: 1;
+    min-width: 0;
+    padding: 16px;
+    background-color: #252538;
+    border: 1px solid #353550;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #888888;
+}
+
+.search-input:focus {
+    border-color: #a78bfa;
+}
+
+.search-button {
+    background-color: #8b5cf6;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-button:hover {
+    background-color: #a78bfa;
+}
+
+
+/* =========================
+   Filters
+========================= */
+
+.filters {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.filters select {
+    background-color: #252538;
+    color: white;
+    border: 1px solid #353550;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+.filters select:focus {
+    border-color: #a78bfa;
+}
+
+
+/* =========================
+   Beatmap Section
+========================= */
+
+.beatmap-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.beatmap-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* =========================
+   Beatmap Cards
+========================= */
+
+.beatmap-card {
+    background-color: #1e1e2e;
+    border: 1px solid #2e2e42;
+    border-radius: 12px;
+    padding: 22px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.beatmap-card:hover {
+    background-color: #292940;
+    transform: translateY(-2px);
+}
+
+.beatmap-info h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.artist {
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+
+/* =========================
+   Beatmap Tags
+========================= */
+
+.beatmap-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tag {
+    background-color: #353550;
+    color: #dddddd;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+
+/* =========================
+   Details Button
+========================= */
+
+.details-button {
+    background-color: #8b5cf6;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+
+    transition: background-color 0.2s;
+}
+
+.details-button:hover {
+    background-color: #a78bfa;
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+.footer {
+    background-color: #1e1e2e;
+    padding: 25px;
+    text-align: center;
+    color: #888888;
+    font-size: 13px;
+}
+
+
+/* =========================
+   Responsive Design
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 20px;
+    }
+
+    .container {
+        margin: 30px auto;
+    }
+
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+    .beatmap-card {
+        padding: 18px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+
+    .search-button {
+        padding: 14px;
+    }
+
+    .filters select {
+        width: 100%;
+    }
+
+    .beatmap-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .details-button {
+        width: 100%;
+        text-align: center;
+    }
+
+}
