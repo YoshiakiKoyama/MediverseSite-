@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mediverse | Beatmap Search</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+
+            <!-- Logo / Homepage -->
+            <a href="index.html" class="logo">Mediverse</a>
+
+            <!-- Navigation Links -->
+            <div class="nav-links">
+                <a href="{% url 'download' %}">Download</a>
+                <a href="{% url 'upload' %}">Upload</a>
+                <a href="{% url 'login' %}">Login</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Discover Beatmaps</h1>
+            <p>Explore MIDI and MusicXML arrangements.</p>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+
+            <!-- Search Form -->
+            <form action="" method="GET" class="search-form">
+
+                <input type="search" name="search" placeholder="Search songs or artists..." class="search-input"
+                    aria-label="Search songs or artists">
+
+                <!-- Filters -->
+                <div class="filters">
+
+                    <select name="instrument" aria-label="Instrument">
+                        <option value="all">All Instruments</option>
+                        <option value="piano">Piano</option>
+                        <option value="guitar">Guitar</option>
+                        <option value="drums">Drums</option>
+                    </select>
+
+                    <select name="format" aria-label="File format">
+                        <option value="all">All Formats</option>
+                        <option value="midi">MIDI</option>
+                        <option value="musicxml">MusicXML</option>
+                    </select>
+
+                </div>
+
+                <button type="submit" class="search-button">
+                    Search
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Beatmap Results -->
+        <section class="beatmap-section">
+
+            <h2>Beatmaps</h2>
+
+            <div class="beatmap-list">
+
+                {% for beatmap in beatmaps %}
+
+                <article class="beatmap-card">
+
+                    <div class="beatmap-info">
+
+                        <h3>{{ beatmap.title }}</h3>
+
+                        <p class="artist">
+                            {{ beatmap.artist }}
+                        </p>
+
+                        <div class="beatmap-tags">
+
+                            <span class="tag">
+                                {{ beatmap.instrument }}
+                            </span>
+
+                            <span class="tag">
+                                {{ beatmap.file_format }}
+                            </span>
+
+                            <span class="tag">
+                                Difficulty: {{ beatmap.difficulty }}/5
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <a href="#" class="details-button">
+                        Details
+                    </a>
+
+                </article>
+
+                {% empty %}
+
+                <p>No beatmaps available yet.</p>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Mediverse. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

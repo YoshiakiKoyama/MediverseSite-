@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mediverse | Upload</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+
+            <a href="{% url 'home' %}" class="logo">Mediverse</a>
+
+            <div class="nav-links">
+                <a href="{% url 'download' %}">Download</a>
+                <a href="{% url 'upload' %}">Upload</a>
+                <a href="{% url 'login' %}">Login</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Upload Beatmap</h1>
+            <p>Share your MIDI and MusicXML arrangements with the Mediverse community.</p>
+        </section>
+
+        <!-- Upload Form -->
+        <section class="upload-section">
+
+            <h2>Beatmap Information</h2>
+            {% if error %}
+            <p style="color: red;">{{ error }}</p>
+            {% endif %}
+
+            <form action="{% url 'upload' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <!-- Song Title -->
+                <div class="form-group">
+                    <label for="title">Song Title</label>
+                    <input type="text" id="title" name="title" placeholder="Enter song title" required>
+                </div>
+
+                <!-- Artist -->
+                <div class="form-group">
+                    <label for="artist">Artist / Composer</label>
+                    <input type="text" id="artist" name="artist" placeholder="Enter artist or composer" required>
+                </div>
+
+                <!-- Instrument -->
+                <div class="form-group">
+                    <label for="instrument">Instrument</label>
+
+                    <select id="instrument" name="instrument" required>
+                        <option value="">Select Instrument</option>
+                        <option value="piano">Piano</option>
+                        <option value="guitar">Guitar</option>
+                        <option value="drums">Drums</option>
+                        <option value="violin">Violin</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <!-- Difficulty -->
+                <div class="form-group">
+                    <label for="difficulty">Difficulty</label>
+
+                    <select id="difficulty" name="difficulty" required>
+                        <option value="">Select Difficulty</option>
+                        <option value="1">Easy</option>
+                        <option value="2">Normal</option>
+                        <option value="3">Hard</option>
+                        <option value="4">Expert</option>
+                        <option value="5">Master</option>
+                    </select>
+                </div>
+
+                <!-- Description -->
+                <div class="form-group">
+                    <label for="description">Description</label>
+
+                    <textarea id="description" name="description" rows="5"
+                        placeholder="Tell us about your arrangement..."></textarea>
+                </div>
+
+                <!-- File Upload -->
+                <div class="form-group">
+                    <label for="beatmap-file">Beatmap File</label>
+
+                    <input type="file" id="beatmap-file" name="beatmap_file" accept=".mid,.midi,.xml,.musicxml"
+                        required>
+
+                    <p class="file-note">
+                        Supported formats: MIDI (.mid, .midi) and MusicXML (.xml, .musicxml)
+                    </p>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="upload-button">
+                    Upload Beatmap
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Mediverse. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

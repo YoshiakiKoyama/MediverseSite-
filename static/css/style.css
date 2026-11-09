@@ -1,5 +1,5 @@
 /* =========================
-   General Styles
+   1. General Styles
 ========================= */
 
 * {
@@ -24,7 +24,7 @@ a {
 
 
 /* =========================
-   Navigation Bar
+   2. Navigation Bar
 ========================= */
 
 .navbar {
@@ -58,7 +58,7 @@ a {
 
 
 /* =========================
-   Main Container
+   3. Main Container
 ========================= */
 
 .container {
@@ -71,7 +71,7 @@ a {
 
 
 /* =========================
-   Page Header
+   4. Page Header
 ========================= */
 
 .page-header {
@@ -90,7 +90,7 @@ a {
 
 
 /* =========================
-   Search Section
+   5. Search Section
 ========================= */
 
 .search-section {
@@ -140,7 +140,7 @@ a {
 
 
 /* =========================
-   Filters
+   6. Filters
 ========================= */
 
 .filters {
@@ -167,7 +167,7 @@ a {
 
 
 /* =========================
-   Beatmap Section
+   7. Beatmap Section
 ========================= */
 
 .beatmap-section h2 {
@@ -183,7 +183,7 @@ a {
 
 
 /* =========================
-   Beatmap Cards
+   8. Beatmap Cards
 ========================= */
 
 .beatmap-card {
@@ -217,7 +217,7 @@ a {
 
 
 /* =========================
-   Beatmap Tags
+   9. Beatmap Tags
 ========================= */
 
 .beatmap-tags {
@@ -237,10 +237,11 @@ a {
 
 
 /* =========================
-   Details Button
+   10. Details Button
 ========================= */
 
 .details-button {
+    display: inline-block;
     background-color: #8b5cf6;
     color: white;
     padding: 12px 22px;
@@ -258,7 +259,263 @@ a {
 
 
 /* =========================
-   Footer
+   11. Download Page
+========================= */
+
+.download-section {
+    background-color: #1e1e2e;
+    padding: 35px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+
+.download-section h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.download-section > p {
+    color: #aaaaaa;
+    line-height: 1.6;
+}
+
+.game-info {
+    margin: 25px 0;
+}
+
+.game-info p {
+    margin-bottom: 10px;
+    color: #dddddd;
+}
+
+.download-button {
+    display: inline-block;
+    background-color: #8b5cf6;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.download-button:hover {
+    background-color: #a78bfa;
+}
+
+.download-section .download-note {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #888888;
+}
+
+
+/* =========================
+   12. Installation Section
+========================= */
+
+.installation-section {
+    margin-bottom: 40px;
+}
+
+.installation-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.installation-section ol {
+    padding-left: 25px;
+    color: #cccccc;
+}
+
+.installation-section li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   13. Upload Page
+========================= */
+
+.upload-section {
+    background-color: #1e1e2e;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #2e2e42;
+}
+
+.upload-section h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   14. Form Elements
+========================= */
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #dddddd;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+
+    background-color: #252538;
+    color: white;
+
+    border: 1px solid #353550;
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #a78bfa;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input[type="file"] {
+    cursor: pointer;
+}
+
+.file-note {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #888888;
+}
+
+
+/* =========================
+   15. Upload Button
+========================= */
+
+.upload-button {
+    width: 100%;
+    padding: 15px;
+
+    background-color: #8b5cf6;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.upload-button:hover {
+    background-color: #a78bfa;
+}
+
+
+/* =========================
+   16. Login Page
+========================= */
+
+.login-section {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 40px;
+
+    background-color: #1e1e2e;
+    border: 1px solid #2e2e42;
+    border-radius: 12px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.login-header p {
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+
+/* =========================
+   17. Login Form
+========================= */
+
+.login-form {
+    width: 100%;
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+
+    background-color: #8b5cf6;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.login-button:hover {
+    background-color: #a78bfa;
+}
+
+
+/* =========================
+   18. Registration Link
+========================= */
+
+.register-link {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.register-link p {
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #a78bfa;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   19. Footer
 ========================= */
 
 .footer {
@@ -271,7 +528,7 @@ a {
 
 
 /* =========================
-   Responsive Design
+   20. Responsive Design
 ========================= */
 
 @media (max-width: 768px) {
@@ -294,6 +551,7 @@ a {
 
 }
 
+
 @media (max-width: 480px) {
 
     .navbar {
@@ -303,6 +561,8 @@ a {
 
     .nav-links {
         gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .search-form {
@@ -325,6 +585,24 @@ a {
     .details-button {
         width: 100%;
         text-align: center;
+    }
+
+    .download-section {
+        padding: 22px;
+    }
+
+    .download-button {
+        display: block;
+        text-align: center;
+    }
+
+    .upload-section {
+        padding: 22px;
+    }
+
+    .login-section {
+        padding: 25px 20px;
+        margin: 20px auto;
     }
 
 }
