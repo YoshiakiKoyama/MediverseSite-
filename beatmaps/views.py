@@ -80,7 +80,7 @@ def download(request):
 
 # Download the Mediverse game
 def download_game(request):
-    game_path = settings.BASE_DIR / "game_files" / "Mediverse.zip"
+    game_path = settings.BASE_DIR / "game" / "game.txt"
 
     if not game_path.is_file():
         raise Http404("Game file not found.")
@@ -88,5 +88,5 @@ def download_game(request):
     return FileResponse(
         open(game_path, "rb"),
         as_attachment=True,
-        filename="Mediverse.zip"
+        filename="game.txt"
     )
